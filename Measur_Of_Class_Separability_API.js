@@ -12,7 +12,7 @@ app.creePanels = function(){
     panel: ui.Panel({
       widgets:[
         ui.Label({
-          value: 'Measuring class separability',
+          value: ' ____Measuring class separability____',
           style: {fontWeight: 'bold', fontSize: '26px',backgroundColor:'#02031E',color:'#EDC605'}
         }),
         ui.Label({
@@ -101,7 +101,9 @@ app.filters.panel = ui.Panel({
     ],
     style: app.SECTION_STYLE
   });
-  app.separability = {
+  
+   
+app.separability = {
     separButton: ui.Button({
       label: 'Calculate',
       onClick: function() {
@@ -126,7 +128,8 @@ app.filters.panel = ui.Panel({
     loadingLabel: ui.Label({
       style: {stretch: 'vertical', fontSize: '16px',color: '#929BFC', shown: false,backgroundColor:'#02031E'}
     })
-  };  
+  };
+  
   app.separability.panel = ui.Panel({
     widgets: [
       ui.Panel({
@@ -153,7 +156,10 @@ app.filters.panel = ui.Panel({
     ],
     style: app.SECTION_STYLE
   });
+  
+
 };
+
 app.creeConstantes = function(){
   app.IMAGE_COUNT_LIMIT = 10;
 
@@ -205,6 +211,7 @@ app.creeConstantes = function(){
     }
   };
 };
+
 app.setLoadingMode = function(enabled) {
   app.filters.loadingLabel.style().set('shown', enabled);
   var loadDependentWidgets = [
@@ -217,6 +224,7 @@ app.setLoadingMode = function(enabled) {
     widget.setDisabled(enabled);
   });
 };
+
 app.applyFilters = function() {
   Map.clear();
   Map.setCenter(possition[0], possition[1], 9);
@@ -250,6 +258,7 @@ app.applyFilters = function() {
         app.setLoadingMode(false);
     }
 };
+
 app.applySepar = function() {
   var polygonsT = ee.FeatureCollection(classes_App);
   var nom=[];
@@ -258,8 +267,11 @@ app.applySepar = function() {
             var nam = c.getInfo();
             nom.push(nam);
           }
+  
   var toolPanel = ui.Panel({widgets: [],style: {position: 'top-right',padding:'5px',minHeight: '160px',width: '140px'}});
+
   toolPanel.add(ui.Label('les classes', {margin: '4px',fontSize:'18px'}));
+
         var elem,lign,all;
         all = ui.Panel({
             widgets:[
@@ -277,6 +289,9 @@ app.applySepar = function() {
             layout: ui.Panel.Layout.flow('horizontal'),
             style:{backgroundColor:'#02031E',margin: '0 0 3px 0'}
           });
+  
+  
+  
   var ci=[];
   for(var i=0;i<4;i++)
   {
@@ -293,7 +308,34 @@ app.applySepar = function() {
       }
     }
     ci.push(cj);
-  }        
+  }
+  
+  
+  function jmsep(classe1,classe2,image,table){
+    var tab1=table.filter(ee.Filter.eq('Class',classe1));
+    var m1 = image.reduceRegion({reducer: ee.Reducer.mean(),geometry: tab1.geometry()});
+    var s1 = image.toArray().reduceRegion({reducer: ee.Reducer.covariance(),geometry: tab1.geometry()});
+    var tab2=table.filter(ee.Filter.eq('Class',classe2));
+    var m2 = image.reduceRegion({reducer: ee.Reducer.mean(),geometry: tab2.geometry()});
+    var s2 = image.toArray().reduceRegion({reducer: ee.Reducer.covariance(),geometry: tab2.geometry()});
+    var m12 = m1.toArray().subtract(m2.toArray());
+    m12 = ee.Array.cat([m12], 1);
+    var m122 = m12.transpose();
+    s1=s1.toArray();
+    s2=s2.toArray();
+    var s12i=(s1.add(s2)).divide(2).matrixInverse();
+    var b1=(m122.matrixMultiply(s12i)).divide(8);
+    b1= b1.matrixMultiply(m12);
+    var ds1=s1.matrixDeterminant();
+    var ds2=s2.matrixDeterminant();
+    var ds12=(s1.add(s2).divide(2)).matrixDeterminant();
+    var b22 = (ds1.sqrt()).multiply(ds2.sqrt());
+    var b2=(ds12.divide(b22)).log().divide(2);
+    var b=ee.Number(ee.List((b1.add(b2)).project([1]).toList()).get(0));
+    return (ee.Number(1).subtract(ee.Number(1).divide(b.exp()))
+    .multiply(2));
+  }
+          
         for(var k=0;k<classes_App.length;k++){
           lign.add(ui.Label({
             value: nom[k],
@@ -346,8 +388,11 @@ app.applySepar = function() {
               style:{backgroundColor:'#02031E'}
         });
         app.separability.panel.add(ui.Label('4) Result of class separability', {fontWeight: 'bold', fontSize: '18px',textAlign:'center',backgroundColor:'#02031E',color:'#EDC605'}));
-        app.separability.panel.add(table); 
+        app.separability.panel.add(table);
+        app.separability.panel.add(ui.Label('This index takes a value between 0 and 2. A separability index greater than 1.90 indicates good class separability while a value less than 1.0 shows poor separability.', app.HELPER_TEXT_STYLE));
+
 };
+
 app.boot = function() {
   app.creeConstantes();
   app.creePanels();
@@ -357,7 +402,7 @@ app.boot = function() {
       app.filters.panel,
       app.separability.panel
     ],
-    style: {width: '480px', padding: '15px',color: '#02031E',backgroundColor:'#02031E'}
+    style: {width: '500px', padding: '15px',color: '#02031E',backgroundColor:'#02031E'}
   });
   Map.setCenter(possition[0], possition[1], 9);
   ui.root.insert(0, main);
