@@ -3,4 +3,4 @@ This APP is necessary to evaluate the quality of the class representative sample
 
 ## The area studied
 The area studied is Oran, it is known for the diversity of the terrain, the presence of several themes and problems of confusion between the different classes, it is at the edge of the southern shore of the Mediterranean basin, which represents a ideal form for examining the efficiency of the classifier used.
-![image description](C:/Users/DELL/Downloads/oran.png)
+![Uploading Oran.png…]()
