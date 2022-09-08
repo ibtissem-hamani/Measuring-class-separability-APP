@@ -12,7 +12,7 @@ app.creePanels = function(){
     panel: ui.Panel({
       widgets:[
         ui.Label({
-          value: ' ____Measuring class separability____',
+          value: ' Measuring class separability',
           style: {fontWeight: 'bold', fontSize: '26px',backgroundColor:'#02031E',color:'#EDC605'}
         }),
         ui.Label({
