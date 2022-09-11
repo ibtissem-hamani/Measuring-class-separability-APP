@@ -22,13 +22,11 @@ The evaluation of the separability of the samples is done from the spectral sign
 The Jeffries–Matusita (JM) distance is a widely used statistical separability criterion. It is a parametric criterion, for which the values range between 0 and 2. For the separability measurement, the normal distribution is usually considered. In this case, the JM separability criterion takes into account the distance between class means andthe distribution of values from the means. This is achieved by involving the covariance matrices of the classes in the separability measurement. This separability criterion can be used to pairwise measure the separability between classes, allowing the assessment of the quality of the selected class samples in the available feature space(Ghoggali and Melgani 2009 [Link](https://ieeexplore.ieee.org/document/4806102)).
 
 ## Theoretical background
-The JM separability criterion is a widely used criterion in the field of pattern recognition and feature selection. In the literature, the JM separability criterion (J) between two classes wi and wj that are members of a set of C classes (i, j = 1, 2,…, C, i ≠ j) has
-been defined as follows (Swain and Davis 1978, "Remote Sensing: The Quantitative Approach" in New York: McGraw-Hill.)
+The JM separability criterion is a widely used criterion in the field of pattern recognition and feature selection. In the literature, the JM separability criterion (J) between two classes wi and wj that are members of a set of C classes (i, j = 1, 2,…, C, i ≠ j) has been defined as follows (Swain and Davis 1978)
+ere dij is the Bhattacharyya distance between the classes wi and wj, defined as (Swain and Davis 1978 [Link](https://www.sciencedirect.com/science/article/abs/pii/S0167865514000166?via%3Dihub)):
 
+where P(x/wi) and P(x/wj) are the conditional probability density functions of the random variable x, given the data classes wi and wj, respectively. Usually, the multivariate normal distribution is assumed and the Bhattacharyya distance takes the form (Duda, Hart, and Stork 2000 [link](https://www.amazon.fr/Pattern-Classification-2e-RO-Duda/dp/0471056693)):
 
-
-
-
-
+where mi and mj denote the mean values and Si and Sj denote the covariance matrices of the classes wi and wj, respectively. Superscript T denotes the transpose of a matrix. The Bhattacharyya distance is a special case of the Chernoff distance, fij (Nielsen 2014 [link](https://www.sciencedirect.com/science/article/abs/pii/S0167865514000166?via%3Dihub)),which has the following form for the multivariate normal distribution:
 
 
