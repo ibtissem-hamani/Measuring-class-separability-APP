@@ -15,6 +15,7 @@ Now let's try to visualize the image Landsat-08 of Oran in two colored compositi
 ![composition](https://user-images.githubusercontent.com/101288856/189525875-d2e64652-7b20-439f-aa70-9696eff9d7fa.png)
 
 ## Creation of samples
+![Measuring class separability — Mozilla Firefox 2022-09-11 13-06-44(1)](https://user-images.githubusercontent.com/101288856/189526941-cde8e837-5972-4408-a45d-23c6fbc3b929.gif)
 
 
 
