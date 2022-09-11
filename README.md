@@ -17,8 +17,5 @@ Now let's try to visualize the image Landsat-08 of Oran in two colored compositi
 
 ## Evaluation of sample separability
 The evaluation of the separability of the samples is done from the spectral signatures of the ground elements. We evaluated the separability for each of the pairs of samples by the calculation of the Jeffries-Matisuta-distance index.
-This index takes a value between 0 and 2 and the principle used is as follows:
-##### -Separability index>1.90: Indicates good class separability.
-##### -Separability index<1: indicates low separability.
 
 
