@@ -9,7 +9,7 @@ Oran has four thematic classes "Sea", "Urban", "Forest" and "Sebkha".
 
 ## Color Composition Visualization
 Now let's try to visualize the image Landsat-08 of Oran in two colored compositions:
-- Natural composition (B4, B3, B2 of Landsat 8)
 - False composition (B2, B3, B4 of Landsat 8)
+- Natural composition (B4, B3, B2 of Landsat 8)
 
 ![composition](https://user-images.githubusercontent.com/101288856/189525875-d2e64652-7b20-439f-aa70-9696eff9d7fa.png)
