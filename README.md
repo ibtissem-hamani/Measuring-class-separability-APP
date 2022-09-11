@@ -13,3 +13,8 @@ Now let's try to visualize the image Landsat-08 of Oran in two colored compositi
 - Natural composition (B4, B3, B2 of Landsat 8)
 
 ![composition](https://user-images.githubusercontent.com/101288856/189525875-d2e64652-7b20-439f-aa70-9696eff9d7fa.png)
+
+## Creation of samples
+
+
+
