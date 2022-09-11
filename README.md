@@ -18,4 +18,5 @@ Now let's try to visualize the image Landsat-08 of Oran in two colored compositi
 ## Evaluation of sample separability
 The evaluation of the separability of the samples is done from the spectral signatures of the ground elements. We evaluated the separability for each of the pairs of samples by the calculation of the Jeffries-Matisuta-distance index.
 
-
+## Jeffries Matisuta Distance
+The Jeffries–Matusita (JM) distance is a widely used statistical separability criterion. It is a parametric criterion, for which the values range between 0 and 2. For the separability measurement, the normal distribution is usually considered. In this case, the JM separability criterion takes into account the distance between class means andthe distribution of values from the means. This is achieved by involving the covariance matrices of the classes in the separability measurement. This separability criterion can be used to pairwise measure the separability between classes, allowing the assessment of the quality of the selected class samples in the available feature space(Ghoggali and Melgani 2009[Link](https://ieeexplore.ieee.org/document/4806102)).
