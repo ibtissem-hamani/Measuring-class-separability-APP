@@ -12,4 +12,4 @@ Now let's try to visualize the image Landsat-08 of Oran in two colored compositi
 - Natural composition (B4, B3, B2 of Landsat 8)
 - False composition (B2, B3, B4 of Landsat 8)
 
-[![Composition](https://user-images.githubusercontent.com/101288856/189245480-8d5c25d6-2189-46a9-ab54-c2a5e6ec0713.png)]
+![Composition](https://github.com/ibtissem-hamani/Measuring-class-separability-API/issues/2#issue-1368920442)
