@@ -23,13 +23,12 @@ The Jeffries–Matusita (JM) distance is a widely used statistical separability 
 
 ## Theoretical background
 The JM separability criterion is a widely used criterion in the field of pattern recognition and feature selection. In the literature, the JM separability criterion (J) between two classes wi and wj that are members of a set of C classes (i, j = 1, 2,…, C, i ≠ j) has been defined as follows (Swain and Davis 1978):
-### J_(t,j)=2(1-e^(-B_(i,j) ) )                              
+##### J_(t,j)=2(1-e^(-B_(i,j) ) )     
 
 Where dij is the Bhattacharyya distance between the classes wi and wj, defined as (Swain and Davis 1978 [Link](https://www.sciencedirect.com/science/article/abs/pii/S0167865514000166?via%3Dihub)):
 
 where P(x/wi) and P(x/wj) are the conditional probability density functions of the random variable x, given the data classes wi and wj, respectively. Usually, the multivariate normal distribution is assumed and the Bhattacharyya distance takes the form (Duda, Hart, and Stork 2000 [link](https://www.amazon.fr/Pattern-Classification-2e-RO-Duda/dp/0471056693)):
-### B=  1/8 (M_i-M_j )^t {(C_i+C_j)/2}^(-1) (M_i-M_j )+1/2 Ln{|(C_i+C_j)/2|/(|C_i |^(1/2) |C_j |^(1/2) )} 
+##### B=  1/8 (M_i-M_j )^t {(C_i+C_j)/2}^(-1) (M_i-M_j )+1/2 Ln{|(C_i+C_j)/2|/(|C_i |^(1/2) |C_j |^(1/2) )} 
 
-where mi and mj denote the mean values and Si and Sj denote the covariance matrices of the classes wi and wj, respectively. Superscript T denotes the transpose of a matrix. The Bhattacharyya distance is a special case of the Chernoff distance, 
-This index takes a value between 0 and 2. A separability index greater than 1.90 indicates good separability of classes while a value less than 1.0 shows poor separability.
+where mi and mj denote the mean values and Si and Sj denote the covariance matrices of the classes wi and wj, respectively. Superscript T denotes the transpose of a matrix. This index takes a value between 0 and 2. A separability index greater than 1.90 indicates good separability of classes while a value less than 1.0 shows poor separability.
 
