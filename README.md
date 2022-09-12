@@ -26,6 +26,7 @@ The JM separability criterion is a widely used criterion in the field of pattern
 ##### J_(t,j)=2(1-e^(-B_(i,j) ) )     
 
 Where dij is the Bhattacharyya distance between the classes wi and wj, defined as (Swain and Davis 1978 [Link](https://www.sciencedirect.com/science/article/abs/pii/S0167865514000166?via%3Dihub)):
+##### d_ij= -ln⁡{∫√(P(x/W_i )P(x/W_j ))dx}
 
 where P(x/wi) and P(x/wj) are the conditional probability density functions of the random variable x, given the data classes wi and wj, respectively. Usually, the multivariate normal distribution is assumed and the Bhattacharyya distance takes the form (Duda, Hart, and Stork 2000 [link](https://www.amazon.fr/Pattern-Classification-2e-RO-Duda/dp/0471056693)):
 ##### B=  1/8 (M_i-M_j )^t {(C_i+C_j)/2}^(-1) (M_i-M_j )+1/2 Ln{|(C_i+C_j)/2|/(|C_i |^(1/2) |C_j |^(1/2) )} 
