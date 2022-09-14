@@ -33,3 +33,5 @@ where P(x/wi) and P(x/wj) are the conditional probability density functions of t
 
 where mi and mj denote the mean values and Si and Sj denote the covariance matrices of the classes wi and wj, respectively. Superscript T denotes the transpose of a matrix. This index takes a value between 0 and 2. A separability index greater than 1.90 indicates good separability of classes while a value less than 1.0 shows poor separability.
 
+## Results
+![resultat](https://user-images.githubusercontent.com/101288856/190252197-8d894153-13b9-4fac-9be5-c81961407499.gif)
