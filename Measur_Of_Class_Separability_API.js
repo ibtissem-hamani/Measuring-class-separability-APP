@@ -5,7 +5,7 @@ classes_App=[mer,sebkha,urbain,vegetation];
 // API code
 var app={},
 bands = ['B1','B2', 'B3', 'B4', 'B5', 'B6', 'B7'],
-COLLECTION_ID = 'LANDSAT/LC08/C01/T1_TOA',
+COLLECTION_ID = 'LANDSAT/LC08/C02/T1_TOA',
 image=null;
 app.creePanels = function(){
   app.intro = {
